@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-with-role
+  namespace: argocd
+spec:
+  description: project-with-role description
+  sourceRepos:
+  - '*'
+
+  destinations:
+  - namespace: '*'
+    server: '*'
+
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  roles:  #creacion de roles
+  - name: ci-role    #nombre del rolp
+    description: Sync privileges for project-with-role     #description del rol
+    policies:
+    - p, proj:project-with-role:ci-role, applications, sync, project-with-role/*, allow 
+    # proj= nombre del proyecto donde se creara el rol, syn = acciones que puede tomar, por ejemplo este rol solo permite sincronizar pero podemos agregar get, create, delete, update ,override, /*= permite la accion sync en todas las aplicaciones en ese proyecto.

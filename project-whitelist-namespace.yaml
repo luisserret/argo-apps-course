@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev-project
+  namespace: argocd
+spec:
+  description: Dev Project
+  sourceRepos:
+  - '*'
+
+  destinations:
+  - namespace: ns-1   #solo permitira crear recursos en ese namespace en el cluster de kubernetes
+    server: https://kubernetes.default.svc   #solo se permite crear recursos en este cluster
+
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'

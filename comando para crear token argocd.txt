@@ -1,0 +1,2 @@
+argocd proj role create-token project-with-role ci-role
+#project-with-role= nombre del proyecto      ci-role= nombre del rol para el cual se creara el token 

@@ -1,0 +1,21 @@
+luisserret@MacBook-Air-de-Luis-Serret argocd-demo-master % ssh-keygen -t ed25519 -C "some comment"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/luisserret/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/luisserret/.ssh/id_ed25519
+Your public key has been saved in /Users/luisserret/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:j2kRVqiJuutU3mSpRz9emsxkBvo4+Zh0B1W8qHBd0KA some comment
+The key's randomart image is:
++--[ED25519 256]--+
+|        o*o      |
+|       ..o+      |
+|     .E++o .     |
+|    o ++o..      |
+|   ..oB.S        |
+|  .o B.+ =       |
+|  ..=.+ @ o      |
+| ...oB X =       |
+| .o.+oo *        |
++----[SHA256]-----+

@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1   #argocd tipo aplicacion
+kind: Application
+metadata: 
+  name: guestbook
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: guestbook       #namespace donde se ejecutara la aplicacion
+    server: "https://kubernetes.default.svc"        #cluster donde se implementara
+  project: default    # proyecto donde se va a instalar la aplicacion, por deault esta el proyecto "default"
+  source: 
+    path: guestbook
+    repoURL: "https://github.com/mabusaa/argocd-example-apps.git"    #fuente de verdad donde obtendra el manifiesto
+    targetRevision: master
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true    #le estamos diciendo a argocd que si no existe el namespace, que argocd lo cree
