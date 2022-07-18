@@ -16,3 +16,4 @@ spec:
     syncOptions:
       - CreateNamespace=true
       # esto es un comentario desde ubuntu
+      #esto es un comentario desde mac
